@@ -1,0 +1,34 @@
+[project]
+name = "zhiyin-agent"
+version = "0.1.0"
+description = "知音 ZhiYin - 社交产品 AI Agent 核心系统（求职实战项目）"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "openai>=1.40",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zhiyin"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+# ============================================================
+# 关于后续阶段的依赖（重要）
+# ------------------------------------------------------------
+# 这里只声明 S0 必需的 7 个包，保证 `uv sync` 快速、稳定。
+# 其余能力所需的库，请到对应阶段用 `uv add <包名>` 按需添加，
+# 不要一次性全装上——那样既慢又容易出现版本冲突。
+# 每个阶段要装什么，见：docs/依赖安装清单.md
+# ============================================================

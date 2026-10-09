@@ -1,0 +1,28 @@
+# 密钥与本地配置（务必不要提交！）
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# 数据与产物
+data/chroma/
+data/*.db
+*.sqlite
+*.db
+logs/
+*.log
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
